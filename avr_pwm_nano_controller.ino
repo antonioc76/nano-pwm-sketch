@@ -2,11 +2,11 @@
 
 #define PWM_PIN 10
 
-#define DS_0 0
 #define PWM_FREQUENCY 490.0
 #define SECONDS_TO_MICROSECONDS 1000000.0
 
-AVR_PWM* PWM_Instance;
+float duty_0 = 1000.0 / (SECONDS_TO_MICROSECONDS / PWM_FREQUENCY) * 100.0;
+AVR_PWM* PWM_Instance = new AVR_PWM(PWM_PIN, PWM_FREQUENCY, duty_0);
 
 
 void setup() {
